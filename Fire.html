@@ -43,17 +43,23 @@
 <script type="text/javascript">
 	var mouseX = 0;
 	var mouseY = 0;
+	var active;
 	
 	function spawn(){
 		offset = (Math.floor((Math.random() * 10) + 40)) - 20;
 		duration = Math.random();
 		dimensions = Math.floor((Math.random() * 10) + 40);
-		$('.body').append("<div style='margin-top: " + mouseY + "px; margin-left: " + (mouseX + offset*2) + "px; width: " + dimensions + "px; height: " + dimensions + "px; animation-duration: " + (duration) + "s'></div>");
+
+		if ( active == true ) {
+			$('.body').append("<div style='margin-top: " + mouseY + "px; margin-left: " + (mouseX + offset*2) + "px; width: " + dimensions + "px; height: " + dimensions + "px; animation-duration: " + (duration) + "s'></div>");
+		}
 	}
 
 	function get_mouse_pos(){
 		mouseY = event.clientY;
 		mouseX = event.clientX;
+
+		active = true;
 	}
 
 	$(function() {
