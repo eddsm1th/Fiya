@@ -51,7 +51,7 @@
 		dimensions = Math.floor((Math.random() * 10) + 40);
 
 		if ( active == true ) {
-			$('.body').append("<div style='margin-top: " + mouseY + "px; margin-left: " + (mouseX + offset*2) + "px; width: " + dimensions + "px; height: " + dimensions + "px; animation-duration: " + (duration) + "s'></div>");
+			$('.body').append("<div style='margin-top: " + mouseY + "px; margin-left: " + (mouseX + offset*2) + "px; width: " + dimensions + "px; height: " + dimensions + "px; animation-duration: " + (duration+0.1) + "s'></div>");
 		}
 	}
 
@@ -64,6 +64,6 @@
 
 	$(function() {
         spawn();
-        setInterval(function() { spawn() }, 10);
+        setInterval(function() { spawn() }, 8);
     });
 </script>
